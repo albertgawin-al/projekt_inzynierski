@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %} Albert Gawin - Projekt inżynierski {% endblock %}
+
+{% block head %}
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+{% endblock %}
+
+{% block navbar_title %} 
+    <a class="navbar-brand" href="#top">Projekt inżynierski</a> 
+{% endblock %}
+
+{% block navbar %}
+    <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#articles">Artykuły</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="articles_container">
+        {% for article in articles %}
+        <a target="_blank" href="https://pubmed.ncbi.nlm.nih.gov/{{ article.id }}">
+            <div class="article card">
+                <div class="card-body">
+                    <h5 class="article_title card-title">{{ article.title }}</h5>
+                    <p class="card-text" style="color:black">{{ article.abstract }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock %}

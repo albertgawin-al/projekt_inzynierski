@@ -1,0 +1,13 @@
+.articles_container {
+    margin-top: 72px;
+    padding: 10px 50px 10px 50px
+}
+
+.article {
+    margin-top: 10px;
+}
+
+.article_title {
+    font-size: 1rem;
+    color: black;
+}
